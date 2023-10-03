@@ -1,5 +1,3 @@
 #!/usr/bin/python3
-i = 97  # ASCII value of 'a'
-while i <= 122:  # ASCII value of 'z'
+for i in range(97, 123):
     print(chr(i), end="")
-    i += 1
