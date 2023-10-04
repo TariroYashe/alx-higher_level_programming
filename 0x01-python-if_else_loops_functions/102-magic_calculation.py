@@ -6,7 +6,6 @@ def magic_calculation(a, b, c):
     if a < b:
         # If 'a' is less than 'b', return the value of 'c'
         return (c)
-    
     # Check if 'c' is greater than 'b'
     if c > b:
         # If 'c' is greater than 'b', return the sum of 'a' and 'b'

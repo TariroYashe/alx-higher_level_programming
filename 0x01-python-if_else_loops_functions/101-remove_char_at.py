@@ -4,12 +4,10 @@
 # - str: the input string
 # - n: the position of the character to remove
 def remove_char_at(str, n):
-    
     # Check if the given position (n) is negative
     if n < 0:
         # If n is negative, return the original string unchanged
         return (str)
-    
     # If n is non-negative (greater than or equal to 0), create a
     # new strngby concatenating two slices of the input string:
     # - str[:n] rep the part of the string before the char at position n
