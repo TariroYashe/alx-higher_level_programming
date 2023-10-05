@@ -1,24 +1,20 @@
 #!/usr/bin/python3
 
-# Check if the script is being run as the main program.
-if __name__ == "__main__":
-    """Print the sum, difference, multiple and quotient of 10 and 5."""
+# Import specific functions from the 'calculator_1' module
+from calculator_1 import add, sub, mul, div
 
-    # Import the add, sub, mul, and div func from the 'calculator_1' module.
-    from calculator_1 import add, sub, mul, div
+# Define variables 'a' and 'b' with values 10 and 5
+a = 10
+b = 5
 
-    # Define two variables, 'a' and 'b', and assign them the values 10 and 5.
-    a = 10
-    b = 5
+# Perform the mathematical operations and print the results
+result_add = add(a, b)
+result_sub = sub(a, b)
+result_mul = mul(a, b)
+result_div = div(a, b)
 
-    # Calculate and print the sum of 'a' and 'b' using the 'add' func
-    print("{} + {} = {}".format(a, b, add(a, b)))
-
-    # Calculate and print the difference of 'a' and 'b' using the 'sub' func
-    print("{} - {} = {}".format(a, b, sub(a, b)))
-
-    # Calculate and print the product of 'a' and 'b' using the 'mul' func
-    print("{} * {} = {}".format(a, b, mul(a, b)))
-
-    # Calculate and print the quotient of 'a' and 'b' using the 'div' func
-    print("{} / {} = {}".format(a, b, div(a, b)))
+# Print the results
+print(f"Addition: {a} + {b} = {result_add}")
+print(f"Subtraction: {a} - {b} = {result_sub}")
+print(f"Multiplication: {a} * {b} = {result_mul}")
+print(f"Division: {a} / {b} = {result_div}")
