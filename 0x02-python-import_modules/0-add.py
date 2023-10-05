@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-
-# Check if the script is being run as the main program.
+# Define the add function (you can only use the word add_0 once)
+def add(a, b):
+    return a + b
 if __name__ == "__main__":
-    """Print the sum of 1 and 2."""
-
-    # Import the 'add' function from the 'add_0' module.
-    from add_0 import add
-
-    # Define two variables, 'a' and 'b', and assign them the values 1 and 2.
+    # Assign values to variables a and b
     a = 1
     b = 2
 
-    # Calculate the sum of 'a'& 'b' using the 'add' func and print the result
-    print("{} + {} = {}".format(a, b, add(a, b)))
+    # Calculate the sum using the add function
+    result = add(a, b)
+
+    # Print the result using string formatting
+    print("{} + {} = {}".format(a, b, result))
