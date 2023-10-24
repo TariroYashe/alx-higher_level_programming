@@ -1,15 +1,9 @@
 #!/usr/bin/python3
 
 class Square:
-    """
-    This is the Square class.
-
-    The purpose of this class is to define a square.
-
-    Attributes:
-        None
-
-    Methods:
-        None
-    """
-    pass
+    def __init__(self, size):
+        """Constructor.
+        Args:
+            size: length of side of the square.
+        """
+        self.__size = size
