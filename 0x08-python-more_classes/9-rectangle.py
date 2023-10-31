@@ -8,7 +8,7 @@ class Rectangle:
         number_of_instances (int): The number of Rectangle instances.
         print_symbol (any): The symbol used for string representation.
     """
-    
+
     # Class attributes to keep track of the number of instances and the symbol for string representation
     number_of_instances = 0
     print_symbol = "#"
