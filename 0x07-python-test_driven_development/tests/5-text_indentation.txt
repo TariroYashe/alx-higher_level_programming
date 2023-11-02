@@ -1,29 +1,13 @@
-# Test for print_square function
->>> print_square(4)
-####
-####
-####
-####
+# Test cases for text_indentation function
 
->>> print_square(10)
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
-##########
+>>> from your_module import text_indentation
 
->>> print_square(0)
-(no output)
+# Test case 1: Testing with a simple input
+>>> text_indentation("This is a test. How are you?")
+'This is a test.\n\nHow are you?\n'
 
->>> print_square(1)
-#
+# Test case 2: Testing with a longer input
+>>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo?")
+'Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n\nQuonam modo?\n'
 
->>> print_square(-1)
-Traceback (most recent call last):
-    ...
-ValueError: size must be >= 0
+# Add more test cases here...
