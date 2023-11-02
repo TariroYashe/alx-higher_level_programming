@@ -1,0 +1,17 @@
+# Test say_my_name function
+
+>>> from 3-say_my_name import say_my_name
+
+# Test with both first_name and last_name
+>>> say_my_name("John", "Smith")
+My name is John Smith.
+
+# Test with only first_name
+>>> say_my_name("Walter")
+My name is Walter.
+
+# Test with invalid input
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string or last_name must be a string
