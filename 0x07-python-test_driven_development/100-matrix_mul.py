@@ -22,26 +22,23 @@ def matrix_mul(m_a, m_b):
         [[7, 10], [15, 22]]
     """
     def matrix_mul(m_a, m_b):
-    # Check if m_a and m_b are not empty
+    # Validate m_a and m_b
+    if not isinstance(m_a, list) or not isinstance(m_b, list):
+        raise TypeError("m_a must be a list or m_b must be a list")
+    if not all(isinstance(row, list) for row in m_a) or not all(isinstance(row, list) for row in m_b):
+        raise TypeError("m_a must be a list of lists or m_b must be a list of lists")
     if not m_a or not m_b:
         raise ValueError("m_a can't be empty or m_b can't be empty")
+    if not all(isinstance(num, (int, float)) for row in m_a for num in row) or not all(isinstance(num, (int, float)) for row in m_b for num in row):
+        raise TypeError("m_a should contain only integers or floats or m_b should contain only integers or floats")
+    if any(len(row) != len(m_a[0]) for row in m_a) or any(len(row) != len(m_b[0]) for row in m_b):
+        raise TypeError("each row of m_a must be of the same size or each row of m_b must be of the same size")
 
-    # Check if the number of columns in m_a equals the number of rows in m_b
+    # Check if the matrices can be multiplied
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
-    # Check if m_a and m_b are lists of lists of integers or floats
-    for matrix in [m_a, m_b]:
-        if not isinstance(matrix, (list, tuple)) or not all(isinstance(row, (list, tuple)) for row in matrix):
-            raise TypeError(f"{matrix} must be a list of lists or tuples")
-        row_size = len(matrix[0])
-        for row in matrix:
-            if not all(isinstance(element, (int, float)) for element in row):
-                raise TypeError(f"{matrix} should contain only integers or floats")
-            if len(row) != row_size:
-                raise TypeError(f"Each row of {matrix} must be of the same size")
-
-    # Create an empty result matrix with the appropriate dimensions
+    # Initialize the result matrix with zeros
     result = [[0 for _ in range(len(m_b[0]))] for _ in range(len(m_a))]
 
     # Perform matrix multiplication
