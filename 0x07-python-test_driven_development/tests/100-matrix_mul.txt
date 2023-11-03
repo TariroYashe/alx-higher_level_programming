@@ -1,0 +1,17 @@
+# Test for matrix multiplication
+>>> from main import matrix_mul
+
+# Test case 1: Valid matrix multiplication
+>>> matrix_A = [[1, 2], [3, 4]]
+>>> matrix_B = [[1, 2], [3, 4]]
+>>> result_matrix = matrix_mul(matrix_A, matrix_B)
+>>> result_matrix
+[[7, 10], [15, 22]]
+
+# Test case 2: Invalid matrix multiplication
+>>> matrix_A = [[1, 2]]
+>>> matrix_B = [[3, 4], [5, 6]]
+>>> matrix_mul(matrix_A, matrix_B)
+Traceback (most recent call last):
+...
+ValueError: m_a and m_b can't be multiplied
