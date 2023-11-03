@@ -22,15 +22,15 @@ def matrix_mul(m_a, m_b):
         [[7, 10], [15, 22]]
     """
     def matrix_mul(m_a, m_b):
-    # Requirement 1: Check if m_a and m_b are not empty
+    # Check if m_a and m_b are not empty
     if not m_a or not m_b:
         raise ValueError("m_a can't be empty or m_b can't be empty")
 
-    # Requirement 2: Check if the number of columns in m_a equals the number of rows in m_b
+    # Check if the number of columns in m_a equals the number of rows in m_b
     if len(m_a[0]) != len(m_b):
-        raise ValueError("Matrix dimensions are not suitable for multiplication")
+        raise ValueError("m_a and m_b can't be multiplied")
 
-    # Requirement 3: Check if m_a and m_b are lists of lists of integers or floats
+    # Check if m_a and m_b are lists of lists of integers or floats
     for matrix in [m_a, m_b]:
         if not isinstance(matrix, (list, tuple)) or not all(isinstance(row, (list, tuple)) for row in matrix):
             raise TypeError(f"{matrix} must be a list of lists or tuples")
@@ -40,10 +40,6 @@ def matrix_mul(m_a, m_b):
                 raise TypeError(f"{matrix} should contain only integers or floats")
             if len(row) != row_size:
                 raise TypeError(f"Each row of {matrix} must be of the same size")
-
-    # Check if m_a and m_b can be multiplied
-    if len(m_a[0]) != len(m_b):
-        raise ValueError("m_a and m_b can't be multiplied")
 
     # Create an empty result matrix with the appropriate dimensions
     result = [[0 for _ in range(len(m_b[0]))] for _ in range(len(m_a))]
