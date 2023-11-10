@@ -1,32 +1,29 @@
 #!/usr/bin/python3
-class BaseGeometry:
-    """BaseGeometry class"""
+"""Defines a class Rectangle that inherits from BaseGeometry."""
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-    def area(self):
-        """Raises an Exception"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """Validates if value is a positive integer"""
-        if not isinstance(value, int) or value <= 0:
-            raise ValueError(f"{name} must be a positive integer")
 
 class Rectangle(BaseGeometry):
-    """Rectangle class that inherits from BaseGeometry"""
+    """Represent a rectangle using BaseGeometry."""
 
     def __init__(self, width, height):
-        """Initialize the Rectangle instance with width and height"""
-        self.__width = 0
-        self.__height = 0
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
+        """Intialize a new Rectangle.
+
+        Args:
+            width (int): The width of the new Rectangle.
+            height (int): The height of the new Rectangle.
+        """
+        super().integer_validator("width", width)
         self.__width = width
+        super().integer_validator("height", height)
         self.__height = height
 
     def area(self):
-        """Calculate the area of the rectangle"""
+        """Return the area of the rectangle."""
         return self.__width * self.__height
 
     def __str__(self):
-        """Return a string representation of the Rectangle"""
-        return f"[Rectangle] {self.__width}/{self.__height}"
+        """Return the print() and str() representation of a Rectangle."""
+        string = "[" + str(self.__class__.__name__) + "] "
+        string += str(self.__width) + "/" + str(self.__height)
+        return string
