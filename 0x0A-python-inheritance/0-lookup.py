@@ -2,11 +2,11 @@
 def lookup(obj):
     """
     Returns a list of available attributes and methods of an object.
-    
+
     Args:
-        obj: The object for which to list attributes and methods.
+        obj: The object to inspect.
 
     Returns:
-        A list of attribute and method names.
+        list: A list containing the attributes and methods of the object.
     """
-    return [attr for attr in dir(obj) if not attr.startswith("__")]
+    return dir(obj)
